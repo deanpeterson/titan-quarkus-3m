@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: titan-quarkus-3m 
+  description: Secure Supply Chain Example for Quarkus Java example with advanced continuous integration pipeline covering building, CVE scanning, security scanning, signatures, attestations, SLSA provenance and SBOM along with Gitops-based continuous deployment.   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+    - url: "https://devspaces.apps.salamander.aimlworkbench.com/#https://github.com/deanpeterson/titan-quarkus-3m"
+      title: "Open in Dev Spaces"
+      icon: catalog
+      type: devspaces
+  annotations:
+    # ArgoCD apps from this template used tssc-gitops as the grouping
+    argocd/app-selector: tssc/gitops=titan-quarkus-3m
+    backstage.io/kubernetes-id: titan-quarkus-3m 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: titan-quarkus-3m
+    quay.io/repository-slug: rhdh/titan-quarkus-3m
+  tags: ["java", "quarkus", "sscs", "sbom", "acs"] 
+spec:
+  type: service
+  owner: user:default/deanpeterson 
+  lifecycle: experimental
